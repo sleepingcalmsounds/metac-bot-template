@@ -722,8 +722,8 @@ if __name__ == "__main__":
                 timeout=40,
                 allowed_tries=8,
             ),
-            "researcher": GeneralLlm(model="groq/qwen/qwen3.8-27b", allowed_tries=8),
-            "summarizer": GeneralLlm(model="groq/qwen/qwen3.8-27b", allowed_tries=8),
+            "researcher": GeneralLlm(model="groq/qwen/qwen3.8-27b", allowed_tries=8, max_tokens=900),
+            "summarizer": GeneralLlm(model="groq/qwen/qwen3.8-27b", allowed_tries=8, max_tokens=900),
             "parser": GeneralLlm(model="groq/qwen/qwen3.8-27b", allowed_tries=8),
         },
     )
