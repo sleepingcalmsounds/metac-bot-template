@@ -723,7 +723,6 @@ if __name__ == "__main__":
                 allowed_tries=2,
             ),
             "summarizer": "groq/openai/gpt-oss-20b",
-            "researcher": "asknews/news-summaries",
             "parser": "groq/openai/gpt-oss-20b",
         },
     )
