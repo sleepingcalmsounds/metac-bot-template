@@ -88,7 +88,7 @@ class FallTemplateBot2026(ForecastBot):
                 model="openrouter/openai/gpt-4o", # "anthropic/claude-sonnet-4-20250514", etc (see docs for litellm)
                 temperature=0.3,
                 timeout=40,
-                allowed_tries=2,
+                allowed_tries=5,
             ),
             "summarizer": "openai/gpt-4o-mini",
             "researcher": "asknews/news-summaries",
@@ -709,7 +709,7 @@ if __name__ == "__main__":
     # uncomment and edit to pin specific models.
     template_bot = FallTemplateBot2026(
         research_reports_per_question=1,
-        predictions_per_research_report=5,
+        predictions_per_research_report=2,
         use_research_summary_to_forecast=False,
         publish_reports_to_metaculus=publish_to_metaculus,
         folder_to_save_reports_to=None,
@@ -720,11 +720,11 @@ if __name__ == "__main__":
                 model="groq/openai/gpt-oss-120b",
                 temperature=0.3,
                 timeout=40,
-                allowed_tries=2,
+                allowed_tries=5,
             ),
-            "researcher": "groq/openai/gpt-oss-20b",
-            "summarizer": "groq/openai/gpt-oss-20b",
-            "parser": "groq/openai/gpt-oss-20b",
+            "researcher": GeneralLlm(model="groq/openai/gpt-oss-20b", allowed_tries=5),
+            "summarizer": GeneralLlm(model="groq/openai/gpt-oss-20b", allowed_tries=5),
+            "parser": GeneralLlm(model="groq/openai/gpt-oss-20b", allowed_tries=5),
         },
     )
 
