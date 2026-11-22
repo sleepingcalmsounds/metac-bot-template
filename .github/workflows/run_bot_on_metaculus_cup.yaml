@@ -1,18 +1,14 @@
 name: Forecast on Metaculus Cup
 
-
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 */2 * *"→ Runs at 00:00, every 2 days # runs at midnight every 2 days
-
+    - cron: "0 0 */2 * *" # runs at midnight every 2 days
 
 # Add concurrency group to prevent parallel runs
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: false
-
-
 
 
 # Daily job to run the simple forecast bot
