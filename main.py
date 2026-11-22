@@ -722,6 +722,12 @@ if __name__ == "__main__":
                 timeout=40,
                 allowed_tries=2,
             ),
+            "researcher": GeneralLlm(
+            model="groq/openai/gpt-oss-120b",
+            temperature=0.3,
+            timeout=40,
+            allowed_tries=2,          
+            ),
             "summarizer": "groq/openai/gpt-oss-20b",
             "parser": "groq/openai/gpt-oss-20b",
         },
