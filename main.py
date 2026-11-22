@@ -88,7 +88,7 @@ class FallTemplateBot2026(ForecastBot):
                 model="openrouter/openai/gpt-4o", # "anthropic/claude-sonnet-4-20250514", etc (see docs for litellm)
                 temperature=0.3,
                 timeout=40,
-                allowed_tries=5,
+                allowed_tries=8,
             ),
             "summarizer": "openai/gpt-4o-mini",
             "researcher": "asknews/news-summaries",
@@ -720,11 +720,11 @@ if __name__ == "__main__":
                 model="groq/openai/gpt-oss-120b",
                 temperature=0.3,
                 timeout=40,
-                allowed_tries=5,
+                allowed_tries=8,
             ),
-            "researcher": GeneralLlm(model="groq/openai/gpt-oss-20b", allowed_tries=5),
-            "summarizer": GeneralLlm(model="groq/openai/gpt-oss-20b", allowed_tries=5),
-            "parser": GeneralLlm(model="groq/openai/gpt-oss-20b", allowed_tries=5),
+            "researcher": GeneralLlm(model="groq/openai/gpt-oss-20b", allowed_tries=8),
+            "summarizer": GeneralLlm(model="groq/openai/gpt-oss-20b", allowed_tries=8),
+            "parser": GeneralLlm(model="groq/openai/gpt-oss-120b", allowed_tries=8),
         },
     )
 
